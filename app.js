@@ -7,6 +7,8 @@ const cmdFiles = readdirSync("./commands").filter((file) =>
 	file.endsWith(".js"),
 );
 
+const keep_alive = require('./keep_alive.js');
+
 Bot.on("ready", async () => {
 	for (const fileName of cmdFiles) {
 		const File = require(`./commands/${fileName}`);
